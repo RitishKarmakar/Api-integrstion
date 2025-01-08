@@ -1,10 +1,10 @@
 class Config:
-    SECRET_KEY = "your-secret-key"
-    SQLALCHEMY_DATABASE_URI = "sqlite:///app.db"
+    SECRET_KEY = 'your_secret_key'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    JWT_SECRET_KEY = "your-jwt-secret"
-    MAIL_SERVER = "smtp.example.com"
+    SESSION_TYPE = 'filesystem'
+    MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
-    MAIL_USERNAME = "your-email@example.com"
-    MAIL_PASSWORD = "your-email-password"
+    MAIL_USERNAME = 'your_email@gmail.com'
+    MAIL_PASSWORD = 'your_email_password'
