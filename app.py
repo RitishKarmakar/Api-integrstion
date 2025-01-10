@@ -18,7 +18,7 @@ app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
 
 # Configure Stripe
-stripe.api_key = 'sk_test_51QfPT9Rp1f7R50cd6OwoU5rq3ONnrCzCiww2zvAxb0XP0BExkhfHhroKAVJXLHukDyN6lEnHAdOShHe8yw8WCbKJ00YfFRpp6R'  # Replace with your Stripe secret key
+stripe.api_key = ""
 
 # CSV file to store payment history
 PAYMENT_HISTORY_FILE = 'payment_history.csv'
@@ -77,14 +77,24 @@ def process_payment():
         record_payment(email, charge.id, charge.amount, 'Success')
 
         send_email(email, "Payment Successful", generate_email_body_success(email))
-        return redirect(url_for('home'))
+        return redirect(url_for('thank_you'))
 
     except stripe.error.CardError as e:
         # Record failed payment
         record_payment(email, 'N/A', 5000, 'Failed')
 
         send_email(email, "Payment Failed", generate_email_body_failure(email))
-        return redirect(url_for('home'))
+        return redirect(url_for('sorry'))
+
+@app.route('/thank_you')
+def thank_you():
+    # Render thank_you.html, which will redirect to home after 7 seconds
+    return render_template('thank_you.html')
+
+@app.route('/sorry')
+def sorry():
+    # Render sorry.html, which will redirect to home after 7 seconds
+    return render_template('sorry.html')
 
 def record_payment(email, transaction_id, amount, status):
     with open(PAYMENT_HISTORY_FILE, mode='a', newline='') as file:

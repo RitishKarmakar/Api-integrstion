@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        header, footer {
+            background-color: #3b5998;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #e9ebee;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sidebar {
+            flex: 0 0 200px;
+            background-color: #f0f2f5;
+            padding: 10px;
+        }
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px 0;
+        }
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Facebook</h1>
+    </header>
+    <nav>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Messages</a>
+        </div>
+        <div>
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </nav>
+    <div class="sidebar">
+        <h3>Friends</h3>
+        <ul>
+            <li>Friend 1</li>
+            <li>Friend 2</li>
+            <li>Friend 3</li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h2>News Feed</h2>
+        <div class="post">
+            <p>John Doe posted: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="post">
+            <p>Jane Smith shared a photo.</p>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Facebook
+    </footer>
+</div>
+
+</body>
+</html>

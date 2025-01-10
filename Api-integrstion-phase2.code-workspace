@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "payments application/templates"
+		},
+		{
+			"path": "payments application/venv"
+		}
+	],
+	"settings": {}
+}
